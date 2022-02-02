@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="margin-top: 50px; text-align: center;" class="form-wrap">
+            <form autocomplete="off" class="login100-form" method='POST'>
+                {% csrf_token %}
+                {{ number_form.number }}
+                <input type="submit" value="ثبت">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

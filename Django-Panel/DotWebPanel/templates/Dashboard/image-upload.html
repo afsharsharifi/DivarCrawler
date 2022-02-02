@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پنل</title>
+</head>
+
+<body>
+    <div class="container">
+        <div style="margin-top: 50px; text-align: center;" class="form-wrap">
+            <form autocomplete="off" class="login100-form" method='POST' enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ image_form.image }}
+                <button type="submit">ثبت</button>
+            </form>
+        </div>
+        <div>
+            {% for img in all_images %}
+            <div style="text-align: center;">
+                {% if img.vrified %}
+                <h3 style="color: green; text-align: center; font-size: 24pt;">تایید شده</h3>
+                {% else %}
+                <h3 style="color: red; text-align: center; font-size: 24pt;">تایید نشد</h3>
+                {% endif %}
+                <img src="{{img.image.url}}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>
